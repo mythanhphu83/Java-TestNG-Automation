@@ -1,0 +1,11 @@
+<suite name="Team 1">
+<listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter" />
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+</listeners>
+    <test name="Test Module">
+    <classes>
+    <class name="testCases.test.txt" />
+</classes>
+</test>
+</suite>

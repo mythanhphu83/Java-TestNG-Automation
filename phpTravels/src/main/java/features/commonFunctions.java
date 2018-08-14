@@ -9,11 +9,9 @@ public class commonFunctions {
     public static void login(){
         initialChromeWebDriver();
         gotoURL("https://www.phptravels.net/login");
-        String sEmail="user@phptravels.com";
-        String sPassword="demouser";
         loginPage objLogin=new loginPage();
-        objLogin.txtEmail.sendKeys(sEmail);
-        objLogin.txtPassword.sendKeys(sPassword);
+        objLogin.txtEmail.sendKeys(userEmail);
+        objLogin.txtPassword.sendKeys(password);
         objLogin.btnLogin.click();
         sleep(longSleepTime);
 

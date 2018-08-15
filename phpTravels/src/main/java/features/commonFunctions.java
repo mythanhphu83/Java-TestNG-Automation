@@ -5,17 +5,18 @@ import static features.GlobalVariables.*;
 
 public class commonFunctions {
 
-    // Login with Email and Password
+    // Login with default Email and Password
     public static void login(){
         initialChromeWebDriver();
-        gotoURL("https://www.phptravels.net/login");
+        gotoURL(loginURL);
         loginPage objLogin=new loginPage();
         objLogin.txtEmail.sendKeys(userEmail);
         objLogin.txtPassword.sendKeys(password);
         objLogin.btnLogin.click();
-        sleep(longSleepTime);
+        sleep(shortSleepTime);
 
     }
+
     public static void sleep(long s)
     {
         try {

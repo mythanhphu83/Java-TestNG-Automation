@@ -1,14 +1,14 @@
-package features;
+package features.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
-public class toursPage {
+public class toursFunction {
     WebDriver driver;
 
-    public toursPage(WebDriver driver) {
+    public toursFunction(WebDriver driver) {
         this.driver = driver;
     }
 

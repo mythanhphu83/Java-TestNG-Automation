@@ -1,4 +1,4 @@
-package features;
+package features.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -6,10 +6,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
-public class carsPage {
+public class carsFunction {
     WebDriver driver;
 
-    public carsPage(WebDriver driver) {
+    public carsFunction(WebDriver driver) {
         this.driver = driver;
     }
 

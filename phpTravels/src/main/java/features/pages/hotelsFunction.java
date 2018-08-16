@@ -1,14 +1,14 @@
-package features;
+package features.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
-public class hotelsPage {
+public class hotelsFunction {
     WebDriver driver;
 
-    public hotelsPage(WebDriver driver) {
+    public hotelsFunction(WebDriver driver) {
         this.driver = driver;
     }
 

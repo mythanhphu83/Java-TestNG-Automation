@@ -1,12 +1,12 @@
-package features;
+package features.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class flightsPage {
+public class flightsFunction {
     WebDriver driver;
 
-    public flightsPage(WebDriver driver) {
+    public flightsFunction(WebDriver driver) {
         this.driver = driver;
     }
 

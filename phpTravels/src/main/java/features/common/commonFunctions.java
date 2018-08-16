@@ -1,7 +1,7 @@
-package features;
+package features.common;
 import pageObjects.loginPage;
 import org.openqa.selenium.chrome.ChromeDriver;
-import static features.GlobalVariables.*;
+import static features.pages.GlobalVariables.*;
 
 public class commonFunctions {
 

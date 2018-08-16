@@ -1,4 +1,4 @@
-package features.pages;
+package features.common;
 
 import org.openqa.selenium.WebDriver;
 

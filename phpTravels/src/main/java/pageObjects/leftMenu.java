@@ -1,12 +1,11 @@
 package pageObjects;
 
-import static features.GlobalVariables.*;
-import features.commonFunctions;
+import features.common.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 
-public class leftMenu {
+public class leftMenu extends GlobalVariables{
     public WebElement menuBookings = driver.findElement(By.xpath("//ul[@class='nav profile-tabs']//a[@href=\"#bookings\"]"));
     public WebElement menuMyProfiles = driver.findElement(By.xpath("//ul[@class='nav profile-tabs']//a[@href=\"#profile\"]"));
     public WebElement menuWishList = driver.findElement(By.xpath("//ul[@class='nav profile-tabs']//a[@href=\"#wishlist\"]"));

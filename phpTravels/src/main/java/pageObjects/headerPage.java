@@ -1,12 +1,10 @@
 package pageObjects;
 
-import features.commonFunctions;
+import features.common.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import static features.GlobalVariables.*;
 
-
-public class headerPage {
+public class headerPage extends GlobalVariables {
     // DECLARE VARIABLES
     private  String sHotels ="//ul[@class='nav navbar-nav']//a[@title='Hotels']";
     private  String  sFlights = "//ul[@class='nav navbar-nav']//a[@title='Flights']";

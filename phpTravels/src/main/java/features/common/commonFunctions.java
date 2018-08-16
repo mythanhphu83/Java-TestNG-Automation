@@ -1,9 +1,8 @@
 package features.common;
 import pageObjects.loginPage;
 import org.openqa.selenium.chrome.ChromeDriver;
-import static features.pages.GlobalVariables.*;
 
-public class commonFunctions {
+public class commonFunctions extends GlobalVariables {
 
     // Login with default Email and Password
     public static void login(){
@@ -35,7 +34,7 @@ public class commonFunctions {
     }
     public static void initialChromeWebDriver() {
 
-        String exePath = "D:\\JavaWorkspace\\Project\\chromedriver.exe";
+        String exePath = "./drivers/chromedriver.exe";
         System.setProperty("webdriver.chrome.driver", exePath);
         driver= new ChromeDriver();
         driver.manage().window().maximize();

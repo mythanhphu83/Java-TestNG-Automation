@@ -1,5 +1,5 @@
 package testCases;
-import features.commonFunctions;
+import features.common.*;
 
 public class FE001Loginsucessful {
     public static void main(String[] args) {

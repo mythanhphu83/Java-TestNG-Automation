@@ -1,4 +1,4 @@
-package features;
+package features.common;
 
 public class basePage {
 

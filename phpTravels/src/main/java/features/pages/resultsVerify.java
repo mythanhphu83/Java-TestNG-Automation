@@ -1,12 +1,16 @@
-package features;
+package features.pages;
+import features.common.basePage;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
-
-import java.util.ArrayList;
 import java.util.List;
 
-public class carsFunction extends basePage{
+public class resultsVerify extends basePage {
+    WebDriver driver;
+
+    public resultsVerify(WebDriver driver) {
+        this.driver = driver;
+    }
 
     WebElement baseTable = driver.findElement(By.tagName("table"));
 //    List<WebElement> tableRows = baseTable.findElements(By.xpath("//table[@class='bgwhite table table-striped']//td[contains(@class,'wow fadeIn')]"));

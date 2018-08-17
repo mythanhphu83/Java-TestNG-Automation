@@ -1,23 +1,51 @@
 package pageObjects;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import features.common.GlobalVariables;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class accountPage {
+    private WebDriver driver;
+
+    {
+        driver = GlobalVariables.driver;
+    }
     private String sUserName="//h3[@class='RTL']";
     private String sDate="//div[@class='go-left']//*[@class='h4']";
     private String sTitle="//title";
+
+    public WebElement getDateObject(){
+        return driver.findElement(By.className("h4"));
+    }
     public leftMenu menu=new leftMenu();
 
-    public String getBookingStatus()
+    public Boolean isBookingSelected()
     {
-        String isSelected;
-        isSelected = menu.menuBookings.getAttribute("aria-expanded");
-        System.out.println("STATUS OF BOOKING MENU ="+isSelected);
-
-        if (isSelected=="true")
-            System.out.println("TRUEEEEEEE");
-        else
-            System.out.println("FALSE");
-        return isSelected;
+        return menu.isMenuSelected("bookings");
     }
+    public String getUserName()
+    {
+        WebElement lblUserName=driver.findElement(By.className("RTL"));
+        return lblUserName.getText();
+     }
+    public Boolean getVerify()
+    {
+               return menu.verifyLeftMenuBarLabel();
+    }
+public Boolean verifyFormatDate(){
 
+    SimpleDateFormat formatter=new SimpleDateFormat("dd MMMMM YYYY");
+    String sExpectedDate=formatter.format(new Date()).toString();
+   String sActualDate=getDateObject().getText();
+      if (sActualDate.equals(sExpectedDate)) {
+          System.out.println("Verify Format Date is correct" + sActualDate);
+          return true;
+      } else {
+          System.out.println("INCORRECT DATE FORMAT/VALUE - Actual Date="+sActualDate+". EXPECTED Date="+sExpectedDate);
+          return false;
+      }
 
+}
 }

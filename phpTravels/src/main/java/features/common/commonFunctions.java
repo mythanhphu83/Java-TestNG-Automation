@@ -9,9 +9,9 @@ public class commonFunctions extends GlobalVariables {
         initialChromeWebDriver();
         gotoURL(loginURL);
         loginPage objLogin=new loginPage();
-        objLogin.txtEmail.sendKeys(userEmail);
-        objLogin.txtPassword.sendKeys(password);
-        objLogin.btnLogin.click();
+        objLogin.setEmail(userEmail);
+        objLogin.setPassword(password);
+        objLogin.clickLoginButton();
         sleep(shortSleepTime);
 
     }

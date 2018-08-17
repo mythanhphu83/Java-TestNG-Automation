@@ -5,10 +5,12 @@
 <!--</listeners>-->
     <test name="Test Module">
     <classes>
-    <class name="testCases.FE002ToursVerifyToursFilter" />
+        <class name="testCases.FE001LoginSuccessfully" />
+    <!--    <class name="testCases.FE002ToursVerifyToursFilter" />
         <class name="testCases.FE003CarsVerifyCarsFilter" />
         <class name="testCases.FE004FlightsVerifyFlightsFilter" />
-        <class name="testCases.FE005HotelsVerifyHotelFilter" />
+        <class name="testCases.FE005HotelsVerifyHotelFilter" />-->
+
 </classes>
 </test>
 </suite>

@@ -1,12 +1,9 @@
 package pageObjects;
-import features.commonFunctions;
-import features.GlobalVariables;
+import features.common.commonFunctions;
+import features.common.GlobalVariables;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import features.GlobalVariables;
-
-import static features.GlobalVariables.shortSleepTime;
 
 public class loginPage {
 

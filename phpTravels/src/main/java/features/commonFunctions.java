@@ -10,9 +10,9 @@ public class commonFunctions {
         initialChromeWebDriver();
         gotoURL(loginURL);
         loginPage objLogin=new loginPage();
-        objLogin.txtEmail.sendKeys(userEmail);
-        objLogin.txtPassword.sendKeys(password);
-        objLogin.btnLogin.click();
+        objLogin.setEmail(userEmail);
+        objLogin.setPassword(password);
+        objLogin.clickLoginButton();
         sleep(shortSleepTime);
 
     }
@@ -41,8 +41,8 @@ public class commonFunctions {
         driver.manage().window().maximize();
     }
     // logout
-    public static void logOut() {
-        System.out.println("LOGOUT");
+    public static void closeBrowser() {
+        System.out.println("CLOSES ALL BROWSERS");
         driver.quit(); // close all window opening by WebDriver
     }
 }

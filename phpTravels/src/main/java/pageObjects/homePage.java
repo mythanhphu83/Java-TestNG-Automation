@@ -1,6 +1,6 @@
 package pageObjects;
-import static features.GlobalVariables.*;
-import features.commonFunctions;
+import static features.common.GlobalVariables.*;
+import features.common.commonFunctions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 

@@ -1,0 +1,6 @@
+.vscode/
+phpTravels/.classpath
+phpTravels/.project
+phpTravels/.settings/
+phpTravels/target/
+.idea/

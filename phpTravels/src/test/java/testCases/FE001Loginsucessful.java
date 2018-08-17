@@ -25,6 +25,7 @@ public class FE001Loginsucessful {
       //  String result=AccountPage.getBookingStatus();
     //    Assert.assertEquals(AccountPage.getBookingStatus(),"true","Bookings is not selected by default");
      commonFunctions.closeBrowser();
+	 commonFunctions.closeBrowser();
 
     }
 }

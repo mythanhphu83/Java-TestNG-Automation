@@ -1,11 +1,14 @@
 <suite name="Team 1">
-<listeners>
-    <listener class-name="org.uncommons.reportng.HTMLReporter" />
-    <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
-</listeners>
+<!--<listeners>-->
+    <!--<listener class-name="org.uncommons.reportng.HTMLReporter" />-->
+    <!--<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />-->
+<!--</listeners>-->
     <test name="Test Module">
     <classes>
-    <class name="testCases.test.txt" />
+    <class name="testCases.FE002ToursVerifyToursFilter" />
+        <class name="testCases.FE003CarsVerifyCarsFilter" />
+        <class name="testCases.FE004FlightsVerifyFlightsFilter" />
+        <class name="testCases.FE005HotelsVerifyHotelFilter" />
 </classes>
 </test>
 </suite>

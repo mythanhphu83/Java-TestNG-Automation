@@ -16,4 +16,5 @@ public class GlobalVariables {
     public static String visaURL= phpTravelURL+"ivisa";
     public static String offersURL= phpTravelURL+"offers";
     public static String blogURL= phpTravelURL+"blog";
+    public static String flightsURL= phpTravelURL+"flights";
 }

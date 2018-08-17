@@ -1,17 +1,11 @@
 package features.pages;
+import features.common.*;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
-public class hotelsFunction {
-    WebDriver driver;
-
-    public hotelsFunction(WebDriver driver) {
-        this.driver = driver;
-    }
-
+public class hotelsFunction extends GlobalVariables{
     public void setStarGrade(int starGrade) {
         if (starGrade >= 1 && starGrade <= 5) {
             WebElement rdo_starGrade = driver.findElement(By.xpath("//input[@id='" + starGrade + "']/following::ins[1]"));
@@ -34,20 +28,9 @@ public class hotelsFunction {
             int minPixel = (((minPrice - minValue) / 10) * pixel);
             int maxPixel = ((maxPrice - maxValue) / 10) * pixel;
             Actions action = new Actions(driver);
+            action.dragAndDropBy(sld_Left, minPixel, 0).build().perform();
+            action.dragAndDropBy(sld_Right, maxPixel, 0).build().perform();
 
-            if(minPrice == minValue && maxPrice == maxValue){
-                System.out.println("No set Price Range");
-            }
-            else if (minPrice == minValue && maxPrice < maxValue) {
-                action.dragAndDropBy(sld_Right, maxPixel, 0).build().perform();
-            } else if (minPrice > minValue && maxPrice == maxValue) {
-                action.dragAndDropBy(sld_Left, minPixel, 0).build().perform();
-            } else if (minPrice > minValue && maxPrice < maxValue) {
-                action.dragAndDropBy(sld_Left, minPixel, 0).build().perform();
-                action.dragAndDropBy(sld_Right, maxPixel, 0).build().perform();
-            } else {
-            System.out.println("Invalid data: Data must be from 50, 60, 70, ... to 500");
-        }
     }
 
 

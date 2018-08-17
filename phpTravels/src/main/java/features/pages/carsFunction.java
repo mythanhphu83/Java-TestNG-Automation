@@ -1,18 +1,12 @@
 package features.pages;
+import features.common.*;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
-public class carsFunction {
-    WebDriver driver;
-
-    public carsFunction(WebDriver driver) {
-        this.driver = driver;
-    }
-
+public class carsFunction extends GlobalVariables{
     public void setStarGrade(int starGrade) {
         if (starGrade >= 1 && starGrade <= 5) {
             WebElement rdo_starGrade = driver.findElement(By.xpath("//input[@id='" + starGrade + "']/following::ins[1]"));
@@ -34,24 +28,14 @@ public class carsFunction {
         int minPixel = (((minPrice - minValue) / 100) * pixel);
         int maxPixel = ((maxPrice - maxValue) / 100) * pixel;
         Actions action = new Actions(driver);
-
-        if(minPrice == minValue && maxPrice == maxValue){
-            System.out.println("No set Price Range");
-        }
-        else if (minPrice == minValue && maxPrice < maxValue) {
-            action.dragAndDropBy(sld_Right, maxPixel, 0).build().perform();
-        } else if (minPrice > minValue && maxPrice == maxValue) {
-            action.dragAndDropBy(sld_Left, minPixel, 0).build().perform();
-        } else if (minPrice > minValue && maxPrice < maxValue) {
-            action.dragAndDropBy(sld_Left, minPixel, 0).build().perform();
-            action.dragAndDropBy(sld_Right, maxPixel, 0).build().perform();
-        } else {
-            System.out.println("Invalid data: Data must be from 50, 60, 70, ... to 500");
-        }
+        action.dragAndDropBy(sld_Left, minPixel, 0).build().perform();
+        action.dragAndDropBy(sld_Right, maxPixel, 0).build().perform();
     }
     public void setCarType(String carType) {
-        WebElement rdo_carType = driver.findElement(By.xpath("//input[@id='" + carType + "']/following::ins[1]"));
-        rdo_carType.click();
+        if (!"".equals(carType)) {
+            WebElement rdo_carType = driver.findElement(By.xpath("//input[@id='" + carType + "']/following::ins[1]"));
+            rdo_carType.click();
+        }
     }
 
     public void selectPickUp(String pickUp) {

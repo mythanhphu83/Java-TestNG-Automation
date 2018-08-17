@@ -42,6 +42,7 @@ public class commonFunctions extends GlobalVariables {
     // logout
     public static void logOut() {
         System.out.println("LOGOUT");
+        driver.close();
         driver.quit(); // close all window opening by WebDriver
     }
 }

@@ -1,16 +1,10 @@
 package features.pages;
+import features.common.*;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class flightsFunction {
-    WebDriver driver;
-
-    public flightsFunction(WebDriver driver) {
-        this.driver = driver;
-    }
-
+public class flightsFunction extends GlobalVariables {
     public void setStatus(String status) {
         if (status.toLowerCase().equals("nonstop")) {
             WebElement chk_status = driver.findElement(By.xpath("//input[@id='nonstop']/following::ins[1]"));

@@ -5,36 +5,36 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import pageObjects.accountPage;
 import pageObjects.homePage;
-import pageObjects.loginPage;
+import pageObjects.LoginPage;
 import org.testng.annotations.Test;
+import features.common.GlobalVariables;
 
-import static features.common.GlobalVariables.*;
 
 public class FE001LoginSuccessfully {
     @BeforeTest
-    public void beforeMethod() {
-        System.out.println("===BEFORE TEST====");
-      commonFunctions.initialChromeWebDriver();
+    public void beforeTest() {
+        commonFunctions.initialChromeWebDriver();
     }
     @Test
     public void test() {
+        System.out.println("********* TEST CASE:FE01 Login Successfully");
         // Goto Home page
-         commonFunctions.gotoURL(phpTravelURL);
+        commonFunctions.gotoURL(GlobalVariables.phpTravelURL);
          homePage objHomePage= new homePage();
          objHomePage.clickLoginFromMyAccount();
         //  Verify page title
-         Assert.assertEquals(driver.getTitle(),"Login","Incorrect Login Page Title "+driver.getTitle());
+         Assert.assertEquals(GlobalVariables.driver.getTitle(),"Login","Incorrect Login Page Title ");
         //  Verify page url
-        Assert.assertEquals(driver.getCurrentUrl(),loginURL,"Incorrect Login Page url="+driver.getCurrentUrl());
-        loginPage login=new loginPage();
-        login.setEmail(userEmail);
-        login.setPassword(password);
+        Assert.assertEquals(GlobalVariables.driver.getCurrentUrl(),GlobalVariables.loginURL,"Incorrect Login Page url=");
+        LoginPage login=new LoginPage();
+        login.setEmail(GlobalVariables.userEmail);
+        login.setPassword(GlobalVariables.password);
         login.clickLoginButton();
         accountPage AccountPage=new accountPage();
         // Verify User Name
         Assert.assertEquals(AccountPage.getUserName(),"Hi, Johny Smith","Incorrect User Name");
         //  Verify Current Day as format .Example 08 August 2018
-        AccountPage.verifyFormatDate();
+        Assert.assertTrue(AccountPage.verifyFormatDate(),"Incorrect Format Date.");
         //  Verify Booking menu item is selected by default
         Assert.assertTrue(AccountPage.isBookingSelected(),"Booking is not selected");
         //  Verify Left Menu Labels
@@ -45,7 +45,6 @@ public class FE001LoginSuccessfully {
 
     @AfterTest
     public void afterTest() {
-        System.out.println("AFTER TEST===");
          commonFunctions.logOut();
     }
 }

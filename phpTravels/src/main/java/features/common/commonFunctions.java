@@ -1,19 +1,20 @@
 package features.common;
-import pageObjects.loginPage;
+import pageObjects.LoginPage;
 import org.openqa.selenium.chrome.ChromeDriver;
+import java.util.Random;
 
-public class commonFunctions extends GlobalVariables {
+
+public class commonFunctions {
 
     // Login with default Email and Password
     public static void login(){
         initialChromeWebDriver();
-        gotoURL(loginURL);
-        loginPage objLogin=new loginPage();
-        objLogin.setEmail(userEmail);
-        objLogin.setPassword(password);
+        gotoURL(GlobalVariables.loginURL);
+        LoginPage objLogin=new LoginPage();
+        objLogin.setEmail(GlobalVariables.userEmail);
+        objLogin.setPassword(GlobalVariables.password);
         objLogin.clickLoginButton();
-        sleep(shortSleepTime);
-
+        sleep(GlobalVariables.shortSleepTime);
     }
 
     public static void sleep(long s)
@@ -27,8 +28,8 @@ public class commonFunctions extends GlobalVariables {
     // gotoURL
     public static void gotoURL(String pageUrl)  {
         System.out.println("Go to url "+ pageUrl);
-        driver.get(pageUrl);
-        sleep(shortSleepTime);
+        GlobalVariables.driver.get(pageUrl);
+        sleep(GlobalVariables.shortSleepTime);
 
 
     }
@@ -36,13 +37,27 @@ public class commonFunctions extends GlobalVariables {
 
         String exePath = "./drivers/chromedriver.exe";
         System.setProperty("webdriver.chrome.driver", exePath);
-        driver= new ChromeDriver();
-        driver.manage().window().maximize();
+        GlobalVariables.driver= new ChromeDriver();
+        GlobalVariables.driver.manage().window().maximize();
+    }
+    public static int generateRandomIntergerNumber(int minNumber,int maxNumber){
+        Random rand = new Random();
+        int i = rand.nextInt(maxNumber) + minNumber;
+        return i;
+
+    }
+    public static void swithToNewOpenedWindow()
+    {
+        for(String curWindow : GlobalVariables.driver.getWindowHandles()){
+            GlobalVariables.driver.switchTo().window(curWindow);
+        }
+        System.out.println("SWITCH TO OPENED WINDOW.");
+        GlobalVariables.driver.manage().window().maximize();
     }
     // logout
     public static void logOut() {
         System.out.println("LOGOUT");
-        driver.close();
-        driver.quit(); // close all window opening by WebDriver
+        GlobalVariables.driver.close();
+        GlobalVariables.driver.quit(); // close all window opening by WebDriver
     }
 }

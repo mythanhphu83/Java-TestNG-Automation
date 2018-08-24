@@ -30,22 +30,13 @@ public class accountPage {
         WebElement lblUserName=driver.findElement(By.className("RTL"));
         return lblUserName.getText();
      }
-    public Boolean getVerify()
-    {
-               return menu.verifyLeftMenuBarLabel();
-    }
-public Boolean verifyFormatDate(){
+
+    public Boolean verifyFormatDate(){
 
     SimpleDateFormat formatter=new SimpleDateFormat("dd MMMMM YYYY");
     String sExpectedDate=formatter.format(new Date()).toString();
-   String sActualDate=getDateObject().getText();
-      if (sActualDate.equals(sExpectedDate)) {
-          System.out.println("Verify Format Date is correct" + sActualDate);
-          return true;
-      } else {
-          System.out.println("INCORRECT DATE FORMAT/VALUE - Actual Date="+sActualDate+". EXPECTED Date="+sExpectedDate);
-          return false;
+    String sActualDate=getDateObject().getText();
+      if (sActualDate.equals(sExpectedDate)) return true;
+      else  return false;
       }
-
-}
 }
